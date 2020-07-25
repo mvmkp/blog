@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+{% for i in posts %}
+	<div class="col-6">
+<a href="{% url 'myapp:detail' i.pk %}"><b>{{i.title}}</b></a><br>
+{{i.description}}<br>
+<img src="{{i.image.url}}" height ="300" width ="300"><br>
+posted by: {{i.created_by}}<br>
+<br><br>
+</div>
+{% endfor %}
+<br></div>
+{% endblock %}
